@@ -1,0 +1,199 @@
+/* 设置顶栏宽高 */
+.edu-hd {
+	width: 100%;
+	height: 90px;
+}
+.edu-hd .h-f4{
+	padding-top: 32px;
+	padding-bottom: 36px;
+}
+.edu-hd .f5{
+	float: left;
+}
+.edu-hd .h-f4 .hd-title{
+	padding-left: 84px:;
+}
+.edu-hd .h-f4 .f5 .hd-name{
+	font-family: "Arial";
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 26px;
+	color: rgb(51,51,51);
+}
+
+
+.edu-bd .half-top .slide{
+	opacity: 1;
+}
+
+.edu-bd .half-top .slide a{
+	position: relative;
+}
+
+.edu-bd .half-top .slide .pointer .circle{
+	width: 10px;
+	height: 10px;
+	margin: 5PX;
+	border-radius: 50% 50% 50% 50%;
+	color: black;
+}
+.edu-bd .half-top .slide .pointer{
+	width: 60px;
+	height: 20px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: 30px;
+}
+
+.edu-bd .half-top .friendLink{
+	width: 339px;
+	height: 235px;
+	float: left;
+	margin: 0 35px;
+}
+
+.edu-bd .half-top .friendLink h3{
+	width: 339px;
+	height: 22px;
+	font-family: "Microsoft YaHei";
+	font-size: 22px;
+	font-weight: 400;
+	font-style: normal;
+	color: rgb(51,51,51);
+	line-height: 22px;
+	margin-bottom: 15px;
+}
+
+.edu-bd .half-top .friendLink p{
+	width: 339px;
+	height: 120px;
+	font-family: "Microsoft YaHei";
+	font-size:14px;
+	font-weight: 400;
+	font-style: normal;
+	color: rgb(102,102,102);
+	line-height: 24px;
+	text-align: justify;
+}
+
+.edu-bd .half-top .friendLink a{
+	width: 71px;
+	height: 19px;
+	font-family: "Microsoft YaHei";
+	font-size:14px;
+	font-weight: 400;
+	font-style: normal;
+	color: rgb(57,160,48);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 设置底栏 */
+.edu-ft, .f-f1{
+	width: 100%;
+	height: 262px;
+	margin: 0 auto;
+	background-color: rgb(44,51,57);
+}
+/* 设置底栏所有文字颜色和透明度 */
+.f-f1 p,a{
+	color: #fff;
+	opacity: 0.6;
+}
+
+.f-f2{
+	float: left;
+}
+
+.clearfix:after{content: ""; height: 0; display: block; clear: both; overflow: hidden; visibility: hidden;}
+
+/* 底栏版权宽高，内边距 */
+.edu-ft .f-f1 .copyRight{
+	height: 170px;
+	width: 544px;
+	padding-top: 92px;
+	padding-left: 83px;
+}
+/* 底栏友情链接宽高，内边距 */
+.edu-ft .f-f1 .friendLink{
+	width: 210px;
+	height: 120px;
+	padding-top: 66px;
+}
+/* 底栏“我们”宽高，内边距 */
+.edu-ft .f-f1 .us{
+	width: 134px;
+	height: 114px;
+	padding-top: 66px;
+}
+/* 底栏更多宽高，内边距 */
+.edu-ft .f-f1 .more{
+	width: 134px;
+	height: 90px;
+	padding-top: 66px;
+}
+/* 底栏logo和版权文字外边距 */
+.edu-ft .f-f1 .copyRight .ft-logo{
+	margin-bottom: 13px;
+}
+/* 底栏版权文字字体，行间距 */
+.edu-ft .f-f1 .copyRight p{
+	font-family: "Microsoft YaHei";
+	font-size: 12.5px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 25px;
+}
+/* 底栏“友情链接”，“我们”，“更多”字体，行间距 */
+.edu-ft .f-f1 .f-f2 p{
+	font-family: "Microsoft YaHei";
+	font-size: 12.5px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 30px;
+}
+/* 底栏连接字体和行间距 */
+.edu-ft .f-f1 .f-f2 a{
+	display: block;
+	font-family: "Microsoft YaHei";
+	font-size: 15px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 30px;
+}
+/* 底栏链接hover效果 */
+.edu-ft .f-f1 .f-f2 a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+
