@@ -1,3 +1,23 @@
+.w-edu .edu-ad{
+	width: 100%;
+	height: 36px;
+}
+
+.w-edu .edu-ad p{
+	display: inline-block;
+	line-height: 36px;
+	font-size: 12px;
+	font-weight: 400;
+	font-family: "Arial"
+	color: rgb(51,51,51);
+}
+
+.w-edu .edu-ad a{
+	color: rgb(33,165,87);
+}
+
+
+
 /* 设置顶栏宽高 */
 .edu-hd {
 	width: 100%;
@@ -13,29 +33,23 @@
 .edu-hd .h-f4 .hd-title{
 	padding-left: 84px:;
 }
-.edu-hd .h-f4 .f5 .hd-name{
-	font-family: "Arial";
-	font-size: 22px;
-	font-weight: 400;
-	line-height: 26px;
-	color: rgb(51,51,51);
+
+/* 设置主体上半部分 */
+.edu-bd .half-top .wrapper .slide{
+	width: 100%;
+	height: 460px;
+	overflow: hidden;
 }
-
-
+.edu-bd .half-top .wrapper .slide .imgList{
+	width: 300%;
+	height: 460px;
+}
+.edu-bd .half-top .wrapper .slide .imgList li{
+	display: inline;
+	float: left;
+}
 .edu-bd .half-top .slide{
-	opacity: 1;
-}
-
-.edu-bd .half-top .slide a{
 	position: relative;
-}
-
-.edu-bd .half-top .slide .pointer .circle{
-	width: 10px;
-	height: 10px;
-	margin: 5PX;
-	border-radius: 50% 50% 50% 50%;
-	color: black;
 }
 .edu-bd .half-top .slide .pointer{
 	width: 60px;
@@ -43,14 +57,27 @@
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	margin-left: 30px;
+	margin-left: -30px;
+	z-index: 10;
+}
+.edu-bd .half-top .slide .pointer .circle{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: auto;
+	background-color: black;
+	border-radius: 50%;
 }
 
+.edu-bd .half-top .friendLink-wrapper{
+	width: 1017px;
+	margin: 0 auto;
+}
 .edu-bd .half-top .friendLink{
 	width: 339px;
 	height: 235px;
 	float: left;
-	margin: 0 35px;
+	margin: 0 auto;
 }
 
 .edu-bd .half-top .friendLink h3{
@@ -88,14 +115,101 @@
 }
 
 
+.edu-bd .half-top .workplace{
+	width: 100%;
+	height: 220px;
+}
+.edu-bd .half-top .workplace img{
+	float: left;
+	width: 20%;
+}
 
+/* 设置主体下半部分 */
+.edu-bd .half-bottom{
+	width: 1160px;
+	height: auto;
+	margin: 0 auto;
+	padding-top: 80px;
+}
+/* 设置课程类别 */
+.edu-bd .half-bottom .switch{
+	width: 400px;
+	height: 50px;
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 1px #dcdcdc;
+}
 
+.edu-bd .half-bottom .switch .kindSwitch{
+	float: left;
+	width: 200px;
+	height: 50px;
+	color: #666;
+	text-align: center;
+	font-family: "Microsoft YaHei";
+	font-size: 20px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 50px;
+}
+.edu-bd .half-bottom .course-content{
+	float: left;
+	width: 920px;
+}
+.edu-bd .half-bottom .course-side{
+	float: right;
+	width: 220px;
+}
+.edu-bd .half-bottom #courses{
+	width: 920px;
+	margin-right: -15px;
+}
 
+.edu-bd .half-bottom #courses li{
+	width: 215px;
+	height: 215px;
+	float: left;
+	margin-top: 18px;
+	margin-right: 15px;
+	overflow: hidden;
+}
 
+.edu-bd .half-bottom #courses li .courseName{color: blue;}
 
+.edu-bd .half-bottom .course-side ul li{
+	width: 180px;
+	height: 50px;
+	margin: 20px;
+}
 
+.edu-bd .half-bottom .course-side h4 {
+	height: 60px;
+	background-color: #fff;
+	color: #333;
+	font-family: arial;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 60px;
+	padding-left: 20px;
+}
 
+.edu-bd .half-bottom .course-side .hotListImg{
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-right: 10px;
+}
 
+.edu-bd .half-bottom .course-side ul li p{
+	color: #333;
+	height: 14px;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	font-weight: 400;
+	margin-bottom: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
 
 
