@@ -1,14 +1,29 @@
-.w-edu .edu-ad{
+.w-edu{
 	width: 100%;
-	height: 36px;
 }
 
-.w-edu .edu-ad p{
+.clearfix:after{content: ""; height: 0; display: block; clear: both; overflow: hidden; visibility: hidden;}
+
+/* 设置顶部广告 */
+#edu-ad{
+	width: 100%;
+	height: 36px;
+	background: rgb(243,243,243) none repeat scroll 0 0;
+}
+/* 广告水平居中 */
+.edu-ad{
+	width: 1232px;
+	margin: 0 auto;
+}
+
+#adClick{
 	display: inline-block;
-	line-height: 36px;
+	float: left;
+	height: 36px;
 	font-size: 12px;
+	line-height: 36px;
 	font-weight: 400;
-	font-family: "Arial"
+	font-family: "Microsoft YaHei"
 	color: rgb(51,51,51);
 }
 
@@ -16,107 +31,275 @@
 	color: rgb(33,165,87);
 }
 
-
+#noNotice{
+	display: inline-block;
+	float: right;
+	width: 65px;
+	height: 12px;
+	margin: 12px 0;
+	font-size: 14px;
+	line-height: 9px;
+	font-weight: 400;
+	font-family: "Microsoft YaHei"
+	color: rgb(51,51,51);
+	background: url("img/sprite.png") no-repeat scroll -284px -25px;
+	padding-left: 9px;
+}
 
 /* 设置顶栏宽高 */
-.edu-hd {
+.edu-hd{
 	width: 100%;
 	height: 90px;
-}
-.edu-hd .h-f4{
-	padding-top: 32px;
-	padding-bottom: 36px;
-}
-.edu-hd .f5{
-	float: left;
-}
-.edu-hd .h-f4 .hd-title{
-	padding-left: 84px:;
+	background-color: #fff;
 }
 
-/* 设置主体上半部分 */
-.edu-bd .half-top .wrapper .slide{
-	width: 100%;
-	height: 460px;
-	overflow: hidden;
+.edu-hd .h-f4{
+	width: 1232px;
+	height: 90px;
+	margin: 0 auto;
 }
-.edu-bd .half-top .wrapper .slide .imgList{
-	width: 300%;
-	height: 460px;
-}
-.edu-bd .half-top .wrapper .slide .imgList li{
-	display: inline;
+
+.edu-hd .f5{
+	display: inline-block;
 	float: left;
 }
-.edu-bd .half-top .slide{
-	position: relative;
-}
-.edu-bd .half-top .slide .pointer{
-	width: 60px;
-	height: 20px;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	margin-left: -30px;
-	z-index: 10;
-}
-.edu-bd .half-top .slide .pointer .circle{
+
+.edu-hd .f6{
 	display: inline-block;
+	float: right;
+}
+
+.edu-hd .hd-title{
+	width: 240px;
+	height: 23px;
+	margin: 33px 0 37px 0;
+	background: #fff url("img/sprite.png") no-repeat scroll -223px 0;
+}
+
+.edu-hd .hd-title h2{
+	font-family: "Microsoft YaHei";
+	font-size: 22px;
+	line-height: 20px;
+	margin-left: 84px;
+}
+
+.edu-hd .hd-attention{
+	display: inline-block;
+	height: 21px;
+	margin: 32px 0 37px 32px;
+}
+
+#attention{
+	width: 54px;
+	height: 21px;
+	background: #21a557 url("img/sprite.png") no-repeat scroll -36px 0;
+	padding-left: 21px;
+	color: #fff;
+	font-family: "simsun";
+	font-size: 12px;
+	border-radius: 2px;
+}
+
+.edu-hd .hd-attention .fans{
+	margin-left: 14px;
+}
+
+.edu-hd .hd-attention .fans-num{
+	margin-left: 2px;
+}
+
+.edu-hd .hd-nav{
+	width: 441px;
+	height: 18px;
+	margin: 36px 0;
+}
+
+.edu-hd .hd-nav a{
+	display: inline-block;
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+	height: 18px;
+	line-height: 18px;
+	margin-right: 56px;
+}
+
+/* 搜索图标 */
+#search{
+	width: 18px;
+	height: 18px;
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll 0 0;
+	margin-right: 0;
+}
+
+.edu-hd .hd-nav a:hover{
+	color: #39a030;
+}
+
+#search:hover{
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll 0 -18px;
+}
+
+.edu-bd {
+	width: 1652px;
+	margin: 0 auto;
+}
+
+/* 设置轮播图 */
+#container{
+	width: 1652px;
+	height: 460px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+
+#imgList{
+	width: 8260px;
+	height: 460px;
+	position: absolute;
+	z-index: 1;
+}
+
+#imgList img{
+	float: left;
+}
+
+#buttons{
+	position: absolute;
+	width: 52px;
+	height: 10px;
+	left: 826px;
+	bottom: 20px;
+	margin-left: -26px;
+	z-index: 2;
+}
+
+#buttons span{
 	width: 10px;
 	height: 10px;
-	margin: auto;
-	background-color: black;
+	float: left;
 	border-radius: 50%;
+	background-color: white;
+	margin-right: 6px;
 }
 
-.edu-bd .half-top .friendLink-wrapper{
-	width: 1017px;
-	margin: 0 auto;
+#buttons .on{
+	background-color: black;
 }
+
+.edu-bd .arrow{
+	cursor: pointer;
+	display: none;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	text-decoration: none;
+	z-index: 2;
+	position: absolute;
+}
+
+.edu-bd .arrow:hover{
+	background-color: #000;
+}
+
+#container:hover .arrow {
+	display: block;
+}
+
+#prev{
+	top: 200px;
+	left: 20px;
+}
+
+#next{
+	top: 200px;
+	right: 20px;
+}
+
+/* 设置3个友情链接 */
+.edu-bd .half-top .friendLink-details{
+	width: 100%;
+}
+
+.edu-bd .half-top .friendLink-container{
+	width: 1191px;
+	height: 180px;
+	margin: 60px auto;
+}
+
 .edu-bd .half-top .friendLink{
-	width: 339px;
-	height: 235px;
+	display: inline-block;
+	width: 341px;
+	height: 186px;
 	float: left;
-	margin: 0 auto;
+	margin-right: 84px;
+}
+
+.edu-bd .half-top .friendLink-extra{
+	margin-right: 0;
+}
+
+#icon1{
+	float: left;
+	width: 83px;
+	height: 186px;
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll 0 -83px;
+}
+
+#icon2{
+	float: left;
+	width: 83px;
+	height: 186px;
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -80px -83px;
+}
+
+#icon3{
+	float: left;
+	width: 83px;
+	height: 186px;
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -160px -83px;
 }
 
 .edu-bd .half-top .friendLink h3{
-	width: 339px;
-	height: 22px;
+	float: left;
+	height: 23px;
+	padding-left: 22px;
 	font-family: "Microsoft YaHei";
 	font-size: 22px;
-	font-weight: 400;
-	font-style: normal;
-	color: rgb(51,51,51);
-	line-height: 22px;
-	margin-bottom: 15px;
+	line-height: 20px;
 }
 
 .edu-bd .half-top .friendLink p{
-	width: 339px;
-	height: 120px;
+	float: left;
+	width: 236px;
+	padding-left: 22px;
+	margin-top: 21px;
 	font-family: "Microsoft YaHei";
-	font-size:14px;
-	font-weight: 400;
-	font-style: normal;
-	color: rgb(102,102,102);
+	font-size: 14px;
 	line-height: 24px;
-	text-align: justify;
 }
 
 .edu-bd .half-top .friendLink a{
-	width: 71px;
-	height: 19px;
+	float: left;
+	height: 18px;
+	padding-left: 22px;
+	margin-top: 34px;
 	font-family: "Microsoft YaHei";
-	font-size:14px;
-	font-weight: 400;
-	font-style: normal;
-	color: rgb(57,160,48);
+	font-size: 14px;
+	line-height: 24px;
+	color: #39a030;
 }
 
+.edu-bd .half-top .friendLink a:hover{
+	text-decoration: underline;
+}
 
+/* 设置工作环境的5张照片 */
 .edu-bd .half-top .workplace{
-	width: 100%;
+	width: 1652px;
 	height: 220px;
 }
 .edu-bd .half-top .workplace img{
@@ -126,188 +309,402 @@
 
 /* 设置主体下半部分 */
 .edu-bd .half-bottom{
-	width: 1160px;
+	width: 1239px;
 	height: auto;
-	margin: 0 auto;
-	padding-top: 80px;
+	margin: 81px auto 122px;
 }
 /* 设置课程类别 */
-.edu-bd .half-bottom .switch{
-	width: 400px;
-	height: 50px;
-	margin-bottom: 20px;
-	box-shadow: 1px 1px 1px #dcdcdc;
-}
-
-.edu-bd .half-bottom .switch .kindSwitch{
-	float: left;
-	width: 200px;
-	height: 50px;
-	color: #666;
-	text-align: center;
-	font-family: "Microsoft YaHei";
-	font-size: 20px;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 50px;
-}
 .edu-bd .half-bottom .course-content{
 	float: left;
-	width: 920px;
+	display: inline-block;
+	height: auto;
 }
+
 .edu-bd .half-bottom .course-side{
 	float: right;
 	width: 220px;
-}
-.edu-bd .half-bottom #courses{
-	width: 920px;
-	margin-right: -15px;
+	height: auto;
 }
 
-.edu-bd .half-bottom #courses li{
-	width: 215px;
-	height: 215px;
+.edu-bd .half-bottom .switch{
+	display: inline-block;
+	width: 400px;
+	height: 52px;
+	margin-bottom: 30px;
+	box-shadow: 1px 1px 1px #dcdcdc;
+}
+
+#designType{
 	float: left;
-	margin-top: 18px;
-	margin-right: 15px;
+	width: 200px;
+	height: 52px;
+	text-align: center;
+	font-family: "Microsoft YaHei";
+	font-size: 20px;
+	line-height: 52px;
+}
+
+#programmingType{
+	float: left;
+	width: 200px;
+	height: 52px;
+	text-align: center;
+	font-family: "Microsoft YaHei";
+	font-size: 20px;
+	line-height: 52px;
+}
+
+#designType:hover, #programmingType:hover{
+	background-color: #39a030;
+	color: #fff;
+} 
+
+.edu-bd .half-bottom .switch .on{
+	background-color: #39a030;
+	color: #fff;
+}
+
+#design-courses{
+	width: 992px;
+	padding-right: -22px;
+}
+
+#programming-courses{
+	width: 992px;
+	padding-right: -22px;
+}
+
+.edu-bd .half-bottom .course-content .active li{
+	width: 226px;
+	height: 239px;
+	float: left;
+	margin: 0 22px 20px 0;
+	overflow: hidden;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+	background-color: #fff;
+}
+
+.edu-bd .half-bottom .course-content .active li img{
+	width: 223px;
+	height: 125px;
+}
+
+.edu-bd .half-bottom .course-content .course-name{
+	color: rgb(51,51,51);
+	margin-top: 10px;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	line-height: 16.8px;
+	margin-left: 6px;
+}
+
+.edu-bd .half-bottom .course-content .course-provider{
+	margin-top: 10px;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	line-height: 16.8px;
+	color: #999;
+	margin-left: 6px;
+}
+
+.edu-bd .half-bottom .course-content .learnerNum{
+	display: inline-block;
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -35px -20px;
+	margin-top: 10px;
+	padding: 0 3px 0 18px;
+	border: 1px solid #dddddd;
+	border-radius: 2px;
+	margin-left: 6px;
+}
+
+.edu-bd .half-bottom .course-content .course-price{
+	margin: 10px 0;
+	color: rgb(255,63,0);
+	margin-left: 6px;
+}
+
+.edu-bd .half-bottom .course-content .course-price span{
+	margin-right: 3px;
+}
+
+.edu-bd .half-bottom .course-content .page-button{
+	margin: 30px 0 80px;
+	float: right;
+	display: inline-block;
+	height: 20px;
+}
+
+.edu-bd .half-bottom .course-content .page-button .prev-page{
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+	background: rgb(157,216,177) url("img/sprite.png") repeat scroll -263px -123px;
+}
+
+.edu-bd .half-bottom .course-content .page-button .next-page{
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+	margin: 0 22px 0 0;
+	background: rgb(157,216,177) url("img/sprite.png") repeat scroll -263px -143px;
+}
+
+.edu-bd .half-bottom .course-content .page-button span.page-num{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: top;
+	color: rgb(102,102,102);
+	margin: 0 4px;
+}
+
+.edu-bd .half-bottom .course-content .page-button span:hover{
+	color: rgb(255,255,255);
+	background-color: rgb(157,216,177);
+}
+
+.edu-bd .half-bottom .course-content .page-button .selected-page{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: top;
+	color: rgb(57,160,48);
+	margin: 0 4px;
+}
+
+/* 设置介绍弹窗 */
+.edu-bd .half-bottom .course-side .course-side-top{
+	display: inline-block;
+	height: 251px;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+	margin-bottom: 20px;
+}
+
+.edu-bd .half-bottom .course-side h4 {
+	height: 60px;
+	color: rgb(51,51,51);
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 60px;
+	padding-left: 20px;
+	border-bottom: 1px solid #dddddd;
+}
+
+#video-title{
+	color: #666;
+	height: 32px;
+	margin: 20px 0 2px 23px;
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	line-height: 22px;
+}
+
+#video{
+	margin-left: 23px;
+}
+
+#video-play{
+	position: relative;
+	left: 87px;
+	top: -78px;
+}
+
+#video-popup{
+	position: fixed;
+	left: 0;
+	z-index: 98;
+}
+
+#popup{
+	background: #fff none repeat scroll 0 0;
+	width: 950px;
+	height: 676px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -338px 0 0 -475px;
+	z-index: 99;
+}
+
+#popup p{
+	height: 69px;
+	margin: 0 30px;
+	font: bold 18px/69px "Microsoft YaHei";
+}
+
+#popup video{
+	margin: 0 30px;
+}
+
+#video-close{
+	width: 20px;
+	height: 20px;
+	background-color: grey;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+
+.edu-bd .half-bottom .course-side .course-side-bottom{
+	display: inline-block;
+	background-color: #fff;
+}
+
+/* 设置热门课程 */
+.edu-bd .half-bottom .course-side h4{
+	height: 60px;
+	background-color: #fff;
+	color: rgb(51,51,51);
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 60px;
+	padding-left: 20px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.hotCourses{
+	height: 720px;
 	overflow: hidden;
 }
 
-.edu-bd .half-bottom #courses li .courseName{color: blue;}
+#hotCourses{
+	position: relative;
+}
 
-.edu-bd .half-bottom .course-side ul li{
+#hotCourses a{
+	display: block;
 	width: 180px;
 	height: 50px;
 	margin: 20px;
 }
 
-.edu-bd .half-bottom .course-side h4 {
-	height: 60px;
-	background-color: #fff;
-	color: #333;
-	font-family: arial;
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 60px;
-	padding-left: 20px;
-}
-
-.edu-bd .half-bottom .course-side .hotListImg{
+#hotCourses .hotListImg{
 	width: 50px;
 	height: 50px;
 	float: left;
-	margin-right: 10px;
 }
 
-.edu-bd .half-bottom .course-side ul li p{
+#hotCourses p{
 	color: #333;
 	height: 14px;
 	font-family: "Microsoft YaHei";
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: 400;
 	margin-bottom: 12px;
+	padding-left: 12px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#hotCourses span{
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -35px -20px;
+	color: #333;
+	height: 14px;
+	font-family: "Microsoft YaHei";
+	font-size: 11px;
+	font-weight: 400;
+	margin-left: 12px;
+	padding-left: 17px;
+}
 
 /* 设置底栏 */
-.edu-ft, .f-f1{
+.edu-ft{
 	width: 100%;
 	height: 262px;
-	margin: 0 auto;
 	background-color: rgb(44,51,57);
 }
-/* 设置底栏所有文字颜色和透明度 */
-.f-f1 p,a{
-	color: #fff;
-	opacity: 0.6;
+
+.edu-ft .f-f1{
+	width: 951px;
+	height: 102px;
+	margin: 80px auto;
 }
 
-.f-f2{
+.edu-ft .f-f2{
+	display: inline-block;
 	float: left;
 }
 
-.clearfix:after{content: ""; height: 0; display: block; clear: both; overflow: hidden; visibility: hidden;}
+.edu-ft .copyRight{
+	width: 394px;
+	height: 88px;
+	margin: 92px 0 82px;
+}
 
-/* 底栏版权宽高，内边距 */
-.edu-ft .f-f1 .copyRight{
-	height: 170px;
-	width: 544px;
-	padding-top: 92px;
-	padding-left: 83px;
+.edu-ft .friendLink{
+	width: 113px;
+	height: 102px;
+	margin: 80px 0 80px 149px;
 }
-/* 底栏友情链接宽高，内边距 */
-.edu-ft .f-f1 .friendLink{
-	width: 210px;
-	height: 120px;
-	padding-top: 66px;
+
+.edu-ft .us{
+	width: 63px;
+	height: 102px;
+	margin: 80px 0 80px 87px;
 }
-/* 底栏“我们”宽高，内边距 */
-.edu-ft .f-f1 .us{
-	width: 134px;
-	height: 114px;
-	padding-top: 66px;
+
+.edu-ft .more{
+	width: 62px;
+	height: 72px;
+	margin: 80px 0 110px 73px;
 }
-/* 底栏更多宽高，内边距 */
-.edu-ft .f-f1 .more{
-	width: 134px;
-	height: 90px;
-	padding-top: 66px;
+
+.edu-ft .f-f1 h2{
+	width: 235px;
+	height: 25px;
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -223px 0;
+	padding-left: 84px;
+	font-family: "Microsoft YaHei";
+	font-size: 22px;
+	line-height: 20px;
+	color: rgb(57,160,48);
+	margin-bottom: 25px;
 }
-/* 底栏logo和版权文字外边距 */
-.edu-ft .f-f1 .copyRight .ft-logo{
-	margin-bottom: 13px;
-}
-/* 底栏版权文字字体，行间距 */
-.edu-ft .f-f1 .copyRight p{
+
+.edu-ft .copyRight p{
+	width: 394px;
+	height: 38px;
 	font-family: "Microsoft YaHei";
 	font-size: 12.5px;
-	font-weight: 400;
-	font-style: normal;
 	line-height: 25px;
+	color: rgb(190,191,192);
 }
-/* 底栏“友情链接”，“我们”，“更多”字体，行间距 */
-.edu-ft .f-f1 .f-f2 p{
+
+.edu-ft .f-f2 p{
 	font-family: "Microsoft YaHei";
 	font-size: 12.5px;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 30px;
+	line-height: 29px;
+	color: rgb(190,191,192);
+	opacity: 0.6;
 }
-/* 底栏连接字体和行间距 */
-.edu-ft .f-f1 .f-f2 a{
+
+.edu-ft .f-f2 a{
 	display: block;
 	font-family: "Microsoft YaHei";
-	font-size: 15px;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 30px;
+	font-size: 14.6px;
+	line-height: 29px;
+	color: rgb(190,191,192);
+	opacity: 0.6;
 }
-/* 底栏链接hover效果 */
-.edu-ft .f-f1 .f-f2 a:hover{
-	color: #fff;
+
+.edu-ft .f-f2 a:hover{
 	text-decoration: underline;
 }
 
-
-
+.edu-ft .f-f2 .weibo{
+	width: 21px;
+	height: 16px;
+	background: rgb(0,0,0,0) url("img/sprite.png") no-repeat scroll -160px -10px;
+}

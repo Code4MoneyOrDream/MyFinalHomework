@@ -8,63 +8,69 @@
 </head>
 <body>
 	<div class="w-edu">
-		<div class="edu-ad">
-			<p>网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！
-			<a target="_blank" href="#">立即查看></a></p>
-			<p class="noNotice">不再提醒</p>
+		<div id="edu-ad" display:>
+			<div class="edu-ad clearfix">
+				<p id="adClick">网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a target="_blank" href="javascript:;">立即查看></a></p>
+				<p id="noNotice">不再提醒</p>
+			</div>
 		</div>
 		<div class="edu-hd">
 			<div class="h-f4 clearfix">
 				<div class="hd-title f5">
-					<img class="hd-logo" src="css/img/hd-logo.jpg">
+					<h2>网易教育产品部</h2>
 				</div>
-				<div class="f5">
-					<input type="button" value="关注" class="attention">
-					<p class="fans">粉丝</p>
+				<div class="hd-attention f5">
+					<input type="button" value="关注" id="attention">
+					<span class="fans">粉丝</span>
+					<span class="fans-num">45</span>
 				</div>
-				<div class="hd-nav f5">
+				<div class="hd-nav f6">
 					<a target="_blank" href="http://v.163.com/special/test/alltest.html">网易公开课</a>
 					<a target="_blank" href="http://study.163.com/">云课堂</a>
 					<a target="_blank" href="http://www.icourse163.org/">中国大学MOOC</a>
+					<a href="javascript:;" id="search"></a>
 				</div>
-				<div class="search f5"><img src="css/img/search.jpg"></div>
 			</div>
 		</div>
 		<div class="edu-bd">
 			<div class="half-top">
-				<div class="wrapper">
-					<div class="slide">
-						<ul class="imgList clearfix">
-							<li><a href=""><img src="css/img/banner1.jpg"></a></li>
-							<li><a href=""><img src="css/img/banner2.jpg"></a></li>
-							<li><a href=""><img src="css/img/banner3.jpg"></a></li>
-						</ul>
-						<div class="pointer">
-							<div class="circle"></div>
-							<div class="circle"></div>
-							<div class="circle"></div>
-						</div>
+				<div id="container">
+					<div id="imgList" style="left: -1652px">
+						<a href=""><img src="css/img/banner3.jpg"></a>
+						<a href="http://open.163.com/"><img src="css/img/banner1.jpg"></a>
+						<a href="http://study.163.com/"><img src="css/img/banner2.jpg"></a>
+						<a href="http://www.icourse163.org/"><img src="css/img/banner3.jpg"></a>
+						<a href=""><img src="css/img/banner1.jpg"></a>
+					</div>
+					<div id="buttons">
+						<span index="1" class="on"></span>
+						<span index="2"></span>
+						<span index="3"></span>
+					</div>
+					<div>
+						<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+						<a href="javascript:;" id="next" class="arrow">&gt;</a>
 					</div>
 				</div>
 				<div class="friendLink-details">
-					<div class="friendLink-wrapper clearfix">
-						<div class="friendLink">
-							<div class="icon1"></div>
+					<div class="friendLink-container clearfix">
+						<div class="friendLink clearfix">
+							<div id="icon1"></div>
 							<h3>网易公开课</h3>
 							<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
-							<a target="_blank" href="http://v.163.com/special/test/alltest.html">了解更多></a>
+							<a target="_blank" href="http://v.163.com/special/test/alltest.html">了解更多&nbsp&gt</a>
 						</div>
-						<div class="friendLink">
-							<div class="icon2"></div>
+						<div class="friendLink clearfix">
+							<div id="icon2"></div>
 							<h3>云课堂</h3>
 							<p>网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程，创新的个性化学习体验，自由开放的交流互动环境。</p>
-							<a target="_blank" href="http://study.163.com/">了解更多></a>
+							<a target="_blank" href="http://study.163.com/">了解更多&nbsp&gt</a>
 						</div>
-						<div class="friendLink">
-							<div class="icon3"></div>
+						<div class="friendLink friendLink-extra clearfix">
+							<div id="icon3"></div>
 							<h3>中国大学MOOC</h3>
 							<p>是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人，都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
-							<a target="_blank" href="http://v.163.com/special/test/alltest.html">了解更多></a>
+							<a target="_blank" href="http://v.163.com/special/test/alltest.html">了解更多&nbsp&gt</a>
 						</div>
 					</div>
 				</div>
@@ -77,29 +83,51 @@
 				</div>
 			</div>
 			<div class="half-bottom clearfix">
-				<div class="course-content">
+				<div class="course-content clearfix">
 					<div class="switch clearfix">
-						<div class="kindSwitch">产品设计</div>
-						<div class="kindSwitch">编程语言</div>
+						<div id="designType" class="on">产品设计</div>
+						<div id="programmingType" class="">编程语言</div>
 					</div>
-					<div class="courses">
-						<ul id="courses"></ul>
+					<div class="two-types-courses">
+						<ul id="design-courses" class="active"></ul>
+						<ul id="programming-courses" class="" style="display: none"></ul>
+					</div>
+					<div class="page-button">
+						<span class="prev-page"></span>
+						<span class="page-num">1</span>
+						<span class="selected-page">2</span>
+						<span class="page-num">3</span>
+						<span class="page-num">4</span>
+						<span class="page-num">5</span>
+						<span class="page-num">6</span>
+						<span class="page-num">7</span>
+						<span class="page-num">8</span>
+						<span class="next-page"></span>
 					</div>
 				</div>
 				<div class="edu-introduce course-side">
-					<h4>机构介绍</h4>
-					<div class="edu-introduce-video">
-						<p class="video-title">观看下面的视频来了解吧：</p>
-						<div class="video-img">
-							<img class="video" src="">
-							<img class="play-button" src="">
-						</div>
-						<div class="popup-video" style="display:none;">
+					<div class="course-side-top">
+						<h4>机构介绍</h4>
+						<div class="edu-introduce-video">
+							<p id="video-title">观看下面的视频来了解吧：</p>
+							<div id="video-img">
+								<img id="video" src="css/img/video.jpg">
+								<img id="video-play" src="css/img/play.png">
+							</div>
+							<div id="video-popup" style="display:none;">
+								<div id="popup">
+									<p>请观看下面的视频</p>
+									<video controls="" poster="" src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4" width="889" height="538"></video>
+								<div id="video-close"></div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<h4>最热排行</h4>
-					<div class="hotCourses">
-						<ul id="hotCourses"></ul>
+					<div class="course-side-bottom">
+						<h4>最热排行</h4>
+						<div class="hotCourses">
+							<ul id="hotCourses" style="top: 0"></ul>
+						</div>
 					</div>
 				</div>
 			</div>	
@@ -107,30 +135,30 @@
 		<div class="edu-ft">
 			<div class="f-f1 clearfix">
 				<div class="copyRight f-f2">
-					<img class="ft-logo" src="css/img/edu.jpg">
+					<h2>网易教育产品部</h2>
 					<p>©2014 icourse163.org 浙ICP备08114786号-1<br>
 					icourses.cn 京ICP备12020869</p>
 				</div>
 				<div class="friendLink f-f2">
-					<p>友情链接：</p>
+					<p>友情链接&nbsp:</p>
 					<a target="_blank" href="http://v.163.com/special/test/alltest.html">网易公开课</a>
 					<a target="_blank" href="http://study.163.com/">网易云课堂</a>
 					<a target="_blank" href="http://www.icourse163.org/">中国大学MOOC</a>
 				</div>
 				<div class="us f-f2">
-					<p>我们：</p>
-					<a href="">关于</a>
-					<a href="">联系</a>
-					<a href="">关注</a>
+					<p>我们:</p>
+					<a href="javascript:;">关于</a>
+					<a href="javascript:;">联系</a>
+					<a href="javascript:;">关注<span class="weibo"></span></a>
 				</div>
 				<div class="more f-f2">
-					<p>更多：</p>
-					<a href="">常见问题</a>
-					<a href="">意见反馈</a>
+					<p>更多&nbsp:</p>
+					<a href="javascript:;">常见问题</a>
+					<a href="javascript:;">意见反馈</a>
 				</div>
 			</div>
 		</div>
 	</div>
-<script type="text/javascript" src="js/AjaxForBody.js"></script>
+<script type="text/javascript" src="js/MFH.js"></script>
 </body>
 </html>
