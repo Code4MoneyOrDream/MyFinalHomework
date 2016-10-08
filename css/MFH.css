@@ -2,6 +2,7 @@
 	width: 100%;
 }
 
+/* 为清除所有浮动元素设置的 */
 .clearfix:after{content: ""; height: 0; display: block; clear: both; overflow: hidden; visibility: hidden;}
 
 /* 设置顶部广告 */
@@ -15,7 +16,7 @@
 	width: 1232px;
 	margin: 0 auto;
 }
-
+/* 顶部广告介绍文字 */
 #adClick{
 	display: inline-block;
 	float: left;
@@ -26,11 +27,11 @@
 	font-family: "Microsoft YaHei"
 	color: rgb(51,51,51);
 }
-
+/* 顶部立即查看文字 */
 .w-edu .edu-ad a{
 	color: rgb(33,165,87);
 }
-
+/* 顶部不再提醒文字 */
 #noNotice{
 	display: inline-block;
 	float: right;
@@ -46,29 +47,28 @@
 	padding-left: 9px;
 }
 
-/* 设置顶栏宽高 */
 .edu-hd{
 	width: 100%;
 	height: 90px;
 	background-color: #fff;
 }
-
+/* 设置顶栏宽高，并水平居中 */
 .edu-hd .h-f4{
 	width: 1232px;
 	height: 90px;
 	margin: 0 auto;
 }
-
+/* logo,关注“盒子”左浮动 */
 .edu-hd .f5{
 	display: inline-block;
 	float: left;
 }
-
+/* 顶部右侧导航右浮动 */
 .edu-hd .f6{
 	display: inline-block;
 	float: right;
 }
-
+/* 设置logo和标题 */
 .edu-hd .hd-title{
 	width: 240px;
 	height: 23px;
@@ -88,9 +88,9 @@
 	height: 21px;
 	margin: 32px 0 37px 32px;
 }
-
-#attention{
-	width: 54px;
+/* 关注按钮未点击 */
+.edu-hd .hd-attention .focus{
+	display: inline-block;
 	height: 21px;
 	background: #21a557 url("img/sprite.png") no-repeat scroll -36px 0;
 	padding-left: 21px;
@@ -99,15 +99,118 @@
 	font-size: 12px;
 	border-radius: 2px;
 }
+/* 关注按钮已点击 */
+.edu-hd .hd-attention .focused{
+	display: inline-block;
+	float: left;
+	height: 21px;
+	background: #fff url("img/sprite.png") no-repeat scroll -104px 0;
+	color: #333;
+	padding-left: 22px;
+	font-family: "simsun";
+	font-size: 12px;
+}
+/* 取消 */
+#cancel{
+	display: inline-block;
+	float: left;
+	height: 21px;
+	color: #999;
+	font-family: "simsun";
+	font-size: 12px;
+	line-height: 21px;
+	padding-left: 4px;
+}
 
+#cancel:hover{
+	text-decoration: underline;
+	color: #39a030;
+}
+/* 粉丝和数量 */
 .edu-hd .hd-attention .fans{
 	margin-left: 14px;
+	font-family: "simsun";
+	font-size: 12px;
+	height: 21px;
+	line-height: 21px;
 }
-
 .edu-hd .hd-attention .fans-num{
 	margin-left: 2px;
+	font-family: "simsun";
+	font-size: 12px;
+	height: 21px;
+	line-height: 21px;
+}
+/* 登陆弹窗的背后遮罩 */
+.popup-background{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.8;
+	z-index: 98;
 }
 
+#Login{
+	width: 387px;
+	height: 288px;
+	background: #fff none repeat scroll 0 0;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -144px 0 0 -193px;
+	z-index: 99;
+}
+/* 登录关闭 */
+#Login-close{
+	width: 20px;
+	height: 20px;
+	margin-left: 367px;
+	background: rgba(0,0,0,0) url(img/sprite.png) no-repeat scroll -18px 0;
+}
+/* 登录标题 */
+#Login h3{
+	color: #444;
+	padding: 0 0 10px 38px;
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	line-height: 38px;
+	font-weight: 700;
+}
+
+#Login .Login-form{
+	width: 293px;
+	height: 43px;
+	margin: 0 0 30px 40px;
+	overflow: hidden;
+	position: relative;
+}
+/* 登录输入 */
+#Login .Login-form input{
+	width: 293px;
+	height: 43px;
+	background: #fafafa none repeat scroll 0 0;
+	border: 1px solid #dfdfdf;
+	box-shadow: 1px 1px 2px 1px #f1f1f1 inset;
+	display: block;
+	color: #000;
+	font-family: "Microsoft YaHei";
+	font-size: 16px;
+	line-height: 43px;
+}
+/* 登录按钮 */
+#Login button{
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll 0 -37px;
+	box-shadow: 1px 1px 0 1px #d5e3da;
+	display: block;
+	width: 293px;
+	height: 46px;
+	display: block;
+	margin: 0 0 30px 40px;
+}
+/* 顶部右侧导航 */
 .edu-hd .hd-nav{
 	width: 441px;
 	height: 18px;
@@ -144,7 +247,7 @@
 	margin: 0 auto;
 }
 
-/* 设置轮播图 */
+/* 设置轮播图，5张图片从左往右依次排列，但只显示一张 */
 #container{
 	width: 1652px;
 	height: 460px;
@@ -163,7 +266,7 @@
 #imgList img{
 	float: left;
 }
-
+/* 控制图片切换的按钮 */
 #buttons{
 	position: absolute;
 	width: 52px;
@@ -186,7 +289,7 @@
 #buttons .on{
 	background-color: black;
 }
-
+/* 控制轮播图的左右按钮 */
 .edu-bd .arrow{
 	cursor: pointer;
 	display: none;
@@ -237,21 +340,21 @@
 	float: left;
 	margin-right: 84px;
 }
-
+/* 右边的友情链接不设右外边距，控制宽度 */
 .edu-bd .half-top .friendLink-extra{
 	margin-right: 0;
 }
-
+/* 3个友情链接的图案 */
 #icon1{
 	float: left;
-	width: 83px;
+	width: 80px;
 	height: 186px;
 	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll 0 -83px;
 }
 
 #icon2{
 	float: left;
-	width: 83px;
+	width: 81px;
 	height: 186px;
 	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -80px -83px;
 }
@@ -262,7 +365,7 @@
 	height: 186px;
 	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -160px -83px;
 }
-
+/* 3个友情链接的标题 */
 .edu-bd .half-top .friendLink h3{
 	float: left;
 	height: 23px;
@@ -271,7 +374,7 @@
 	font-size: 22px;
 	line-height: 20px;
 }
-
+/* 3个友情链接的文字 */
 .edu-bd .half-top .friendLink p{
 	float: left;
 	width: 236px;
@@ -281,7 +384,7 @@
 	font-size: 14px;
 	line-height: 24px;
 }
-
+/* 3个友情链接 */
 .edu-bd .half-top .friendLink a{
 	float: left;
 	height: 18px;
@@ -313,19 +416,19 @@
 	height: auto;
 	margin: 81px auto 122px;
 }
-/* 设置课程类别 */
+/* 设置课程内容 */
 .edu-bd .half-bottom .course-content{
 	float: left;
 	display: inline-block;
 	height: auto;
 }
-
+/* 设置侧边栏热门课程 */
 .edu-bd .half-bottom .course-side{
 	float: right;
 	width: 220px;
 	height: auto;
 }
-
+/* 设置课程类别切换 */
 .edu-bd .half-bottom .switch{
 	display: inline-block;
 	width: 400px;
@@ -363,15 +466,13 @@
 	background-color: #39a030;
 	color: #fff;
 }
-
+/* 设置设计课程"盒子大小" */
 #design-courses{
 	width: 992px;
-	padding-right: -22px;
 }
-
+/* 设置编程课程"盒子大小" */
 #programming-courses{
 	width: 992px;
-	padding-right: -22px;
 }
 
 .edu-bd .half-bottom .course-content .active li{
@@ -379,11 +480,10 @@
 	height: 239px;
 	float: left;
 	margin: 0 22px 20px 0;
-	overflow: hidden;
 	box-shadow: 0 1px 1px 1px #e6e6e6;
 	background-color: #fff;
 }
-
+/* 设置每门课图片，名字，授课者，学习人数，课程价格 */
 .edu-bd .half-bottom .course-content .active li img{
 	width: 223px;
 	height: 125px;
@@ -422,11 +522,70 @@
 	color: rgb(255,63,0);
 	margin-left: 6px;
 }
+/* 设置每门课悬浮内容不显示 */
+.edu-bd .half-bottom .course-content .active li a{
+	display: none;
+}
+
+.edu-bd .half-bottom .course-content .active li:hover a{
+	display: inline-block;
+	width: 484px;
+	min-height: 249px;
+	position: relative;
+	left: -10px;
+	top: -249px;
+	background: #fff no-repeat scroll 0 0;
+	z-index: 99;
+	box-shadow: 0 0 2px 1px #d3d1d2;
+}
+/* 设置每门课悬浮显示时图片，名字，学习人数，分类，课程具体描述，价格 */
+.edu-bd .half-bottom .course-content .active li a img{
+	float: left;
+	margin: 10px 0 0 10px;
+}
+
+.edu-bd .half-bottom .course-content .active li a .a-course-name{
+	padding: 16px 0 0 253px;
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.edu-bd .half-bottom .course-content .active li a .a-learnerNum{
+	background: rgba(0,0,0,0) url("img/sprite.png") no-repeat scroll -35px -20px;
+	margin-left: 20px;
+	padding-left: 18px;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+}
+
+.edu-bd .half-bottom .course-content .active li a .a-categoryname{
+	padding: 10px 0 0 253px;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+}
+
+.edu-bd .half-bottom .course-content .active li a .a-course-description{
+	width: 426px;
+	margin-top: 15px;
+	padding-left: 15px;
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	line-height: 24px;
+	color: #333;
+
+}
 
 .edu-bd .half-bottom .course-content .course-price span{
 	margin-right: 3px;
 }
-
+/* 课程下方翻页按钮 */
 .edu-bd .half-bottom .course-content .page-button{
 	margin: 30px 0 80px;
 	float: right;
@@ -461,12 +620,12 @@
 	color: rgb(102,102,102);
 	margin: 0 4px;
 }
-
+/* 课程下方翻页按钮，hover特效 */
 .edu-bd .half-bottom .course-content .page-button span:hover{
 	color: rgb(255,255,255);
 	background-color: rgb(157,216,177);
 }
-
+/* 课程下方翻页按钮，被选中特效 */
 .edu-bd .half-bottom .course-content .page-button .selected-page{
 	display: inline-block;
 	width: 20px;
@@ -499,7 +658,7 @@
 	padding-left: 20px;
 	border-bottom: 1px solid #dddddd;
 }
-
+/* 弹出视频标题 */
 #video-title{
 	color: #666;
 	height: 32px;
@@ -508,7 +667,7 @@
 	font-size: 14px;
 	line-height: 22px;
 }
-
+/* 视频的背景图和播放按钮 */
 #video{
 	margin-left: 23px;
 }
@@ -518,13 +677,7 @@
 	left: 87px;
 	top: -78px;
 }
-
-#video-popup{
-	position: fixed;
-	left: 0;
-	z-index: 98;
-}
-
+/* 设置弹出视频 */
 #popup{
 	background: #fff none repeat scroll 0 0;
 	width: 950px;
@@ -545,14 +698,14 @@
 #popup video{
 	margin: 0 30px;
 }
-
+/* 关闭弹窗视频 */
 #video-close{
 	width: 20px;
 	height: 20px;
-	background-color: grey;
+	background: rgba(0,0,0,0) url(img/sprite.png) no-repeat scroll -18px 0;
 	position: absolute;
-	right: 30px;
-	top: 30px;
+	right: 0px;
+	top: 0px;
 }
 
 .edu-bd .half-bottom .course-side .course-side-bottom{
@@ -572,7 +725,7 @@
 	padding-left: 20px;
 	border-bottom: 1px solid #dddddd;
 }
-
+/* 只显示10门课 */
 .hotCourses{
 	height: 720px;
 	overflow: hidden;
@@ -588,7 +741,7 @@
 	height: 50px;
 	margin: 20px;
 }
-
+/* 每个热门课程的图片，名字，学习人数设置 */
 #hotCourses .hotListImg{
 	width: 50px;
 	height: 50px;
@@ -631,34 +784,16 @@
 	height: 102px;
 	margin: 80px auto;
 }
-
+/* 顶部内容4个"盒子" */
 .edu-ft .f-f2{
 	display: inline-block;
 	float: left;
 }
-
+/* 顶部版权内容 */
 .edu-ft .copyRight{
 	width: 394px;
 	height: 88px;
 	margin: 92px 0 82px;
-}
-
-.edu-ft .friendLink{
-	width: 113px;
-	height: 102px;
-	margin: 80px 0 80px 149px;
-}
-
-.edu-ft .us{
-	width: 63px;
-	height: 102px;
-	margin: 80px 0 80px 87px;
-}
-
-.edu-ft .more{
-	width: 62px;
-	height: 72px;
-	margin: 80px 0 110px 73px;
 }
 
 .edu-ft .f-f1 h2{
@@ -681,6 +816,24 @@
 	line-height: 25px;
 	color: rgb(190,191,192);
 }
+/* 顶部友情链接，通用设置p,a */
+.edu-ft .friendLink{
+	width: 113px;
+	height: 102px;
+	margin: 80px 0 80px 149px;
+}
+
+.edu-ft .us{
+	width: 63px;
+	height: 102px;
+	margin: 80px 0 80px 87px;
+}
+
+.edu-ft .more{
+	width: 62px;
+	height: 72px;
+	margin: 80px 0 110px 73px;
+}
 
 .edu-ft .f-f2 p{
 	font-family: "Microsoft YaHei";
@@ -701,10 +854,4 @@
 
 .edu-ft .f-f2 a:hover{
 	text-decoration: underline;
-}
-
-.edu-ft .f-f2 .weibo{
-	width: 21px;
-	height: 16px;
-	background: rgb(0,0,0,0) url("img/sprite.png") no-repeat scroll -160px -10px;
 }

@@ -20,9 +20,26 @@
 					<h2>网易教育产品部</h2>
 				</div>
 				<div class="hd-attention f5">
-					<input type="button" value="关注" id="attention">
+					<input type="button" value="关注" class="focus" id="attention">
+					<a id="cancel" style="display: none;">取消</a>
 					<span class="fans">粉丝</span>
 					<span class="fans-num">45</span>
+					<div id="Login-popup" style="display: none;">
+						<div class="popup-background"></div>
+						<div id="Login">
+							<div id="Login-close"></div>
+							<h3>登录网易云课堂</h3>
+							<div class="Login-form">
+								<input type="text" id="username">
+								<label for="username" style="display: none;">账号</label>
+							</div>
+							<div class="Login-form">
+								<input type="password" id="password">
+								<label for="password" style="display: none;">密码</label>
+							</div>
+							<button class="submit"></button>
+						</div>
+					</div>
 				</div>
 				<div class="hd-nav f6">
 					<a target="_blank" href="http://v.163.com/special/test/alltest.html">网易公开课</a>
@@ -70,7 +87,7 @@
 							<div id="icon3"></div>
 							<h3>中国大学MOOC</h3>
 							<p>是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人，都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
-							<a target="_blank" href="http://v.163.com/special/test/alltest.html">了解更多&nbsp&gt</a>
+							<a target="_blank" href="http://www.icourse163.org/">了解更多&nbsp&gt</a>
 						</div>
 					</div>
 				</div>
@@ -115,6 +132,7 @@
 								<img id="video-play" src="css/img/play.png">
 							</div>
 							<div id="video-popup" style="display:none;">
+								<div class="popup-background"></div>
 								<div id="popup">
 									<p>请观看下面的视频</p>
 									<video controls="" poster="" src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4" width="889" height="538"></video>
@@ -149,7 +167,7 @@
 					<p>我们:</p>
 					<a href="javascript:;">关于</a>
 					<a href="javascript:;">联系</a>
-					<a href="javascript:;">关注<span class="weibo"></span></a>
+					<a href="javascript:;">关注<img src="css/img/weibo.png"></a>
 				</div>
 				<div class="more f-f2">
 					<p>更多&nbsp:</p>
@@ -159,6 +177,7 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript" src="js/md5.js"></script>
 <script type="text/javascript" src="js/MFH.js"></script>
 </body>
 </html>

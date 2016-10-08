@@ -37,6 +37,67 @@ function popup(){
 }
 popup();
 
+//设置登录
+function Login(){
+	var oAttention = document.getElementById("attention");
+	var oLogPopup = document.getElementById("Login-popup");
+	var oLogClose = document.getElementById("Login-close");
+	var oCancel = document.getElementById("cancel");
+	var oInput = document.getElementsByTagName("input");
+	var oButton = document.getElementsByClassName("submit");
+
+//判断登录的 cookie 是否已设置
+	if( !getCookie ("loginSuc") ){
+		oAttention.onclick = function(){ 
+			oLogPopup.style.display = "block";
+		};
+	}else{
+		oAttention.value = "已关注";
+		oAttention.className = "focused";
+		oAttention.disabled = true;
+		oCancel.style.display = "block";
+	}
+//点击登录
+	oButton[0].onclick = function(){
+		var userName1 = hex_md5(oInput[1].value);
+		var password1 = hex_md5(oInput[2].value);
+		GET("http://study.163.com/webDev/login.htm",{userName:userName1,password:password1},function(a){ 
+			if( a === "1" ){
+				oLogPopup.style.display = "none";
+				setCookie ("loginSuc", "1", 36500);
+				GET("http://study.163.com/webDev/attention.htm","", function(b){
+					if( b === "1" ){
+						setCookie ("followSuc", "1", 36500);
+						oAttention.value = "已关注";
+						oAttention.className = "focused";
+						oAttention.disabled = true;
+						oCancel.style.display = "block";
+					}
+					
+				})	
+			}else{
+				alert( "帐号密码错误，请重新输入!")
+			}
+		 });
+	};
+//取消关注
+	oCancel.onclick = function(){  
+		setCookie("followSuc","",-1);
+		setCookie("loginSuc","",-1);
+		oAttention.value = "关注";
+		oAttention.className = "focus";
+		oAttention.removeAttribute("disabled");
+		this.style.display = "none";
+	};
+
+//关闭登录框
+	oLogClose.onclick = function(){
+		oLogPopup.style.display = "none";
+	}
+}
+Login();
+
+//设置轮播图
 window.onload = function () {
 	var container = document.getElementById("container");
 	var list = document.getElementById("imgList");
@@ -93,7 +154,7 @@ window.onload = function () {
 	function stop(){
 		clearInterval(timer);
 	}
-
+//设置下一张图片按钮，只是做个练习
 	next.onclick = function(){
 		if (index == 3){
 			index = 1;
@@ -105,7 +166,7 @@ window.onload = function () {
 			animate(-1652);
 		}
 	}
-
+//设置上一张图片按钮，只是做个练习
 	prev.onclick = function(){
 		if (index == 1){
 			index = 3;
@@ -195,13 +256,13 @@ function serialize(options) {
   return pairs.join("&");
 }
 
-//设置设计课程信息
+//设置设计课程信息，一般显示和悬浮显示界面，用了太多DOM操作，不确定是否影响性能
 function setDesignCourses(data) {
   var _data = JSON.parse(data);
   var oDiv = document.getElementById("design-courses");
 
   for (i = 0; i < _data.list.length; i++) {
-    var oLi = document.createElement("li");
+  	var oLi = document.createElement("li");
     oDiv.appendChild(oLi);
 
     var _img = document.createElement("img");
@@ -209,7 +270,14 @@ function setDesignCourses(data) {
     var _provider = document.createElement("p");
     var _learnerNum = document.createElement("p");
     var _price = document.createElement("p");
-
+    var oA = document.createElement("a");
+    var Aimg = document.createElement("img");
+    var Ah = document.createElement("h3");
+    var AlearnerNum = document.createElement("span");
+    var Ap = document.createElement("p");
+    var App = document.createElement("p");
+    var AcategoryName = _data.list[i].categoryName;
+//课程一般显示的内容
     _img.setAttribute("src", _data.list[i].middlePhotoUrl);
     _name.setAttribute("class", "course-name");
     _name.innerHTML = _data.list[i].name;
@@ -219,13 +287,30 @@ function setDesignCourses(data) {
     _learnerNum.innerHTML = _data.list[i].learnerCount;
     _price.setAttribute("class","course-price");
     _price.innerHTML = "<span>￥</span>" + _data.list[i].price;
-    
+//课程悬浮显示的内容
+    if(AcategoryName == null){AcategoryName = "无";}
+    Aimg.setAttribute("src", _data.list[i].middlePhotoUrl);
+    Ah.setAttribute("class", "a-course-name");
+    Ah.innerHTML = _data.list[i].name;
+	AlearnerNum.setAttribute("class", "a-learnerNum");
+	AlearnerNum.innerHTML = _data.list[i].learnerCount + "人在学";
+	Ap.setAttribute("class", "a-categoryname clearfix");
+	Ap.innerHTML = "发布者：" + _data.list[i].provider + "</br>分类：" + AcategoryName;
+	App.setAttribute("class", "a-course-description");
+	App.innerHTML = _data.list[i].description;
+//课程悬浮显示的内容全部在一个a标签里
+	oA.appendChild(Aimg);
+	oA.appendChild(Ah);
+	oA.appendChild(AlearnerNum);
+	oA.appendChild(Ap);
+	oA.appendChild(App);
 
     oLi.appendChild(_img);
     oLi.appendChild(_name);
     oLi.appendChild(_provider);
     oLi.appendChild(_learnerNum);
     oLi.appendChild(_price);
+    oLi.appendChild(oA);
   }
 }
 
@@ -241,7 +326,7 @@ function setProgrammingCourses(data) {
   var oDiv = document.getElementById("programming-courses");
 
   for (i = 0; i < _data.list.length; i++) {
-    var oLi = document.createElement("li");
+  	var oLi = document.createElement("li");
     oDiv.appendChild(oLi);
 
     var _img = document.createElement("img");
@@ -249,7 +334,14 @@ function setProgrammingCourses(data) {
     var _provider = document.createElement("p");
     var _learnerNum = document.createElement("p");
     var _price = document.createElement("p");
-
+    var oA = document.createElement("a");
+    var Aimg = document.createElement("img");
+    var Ah = document.createElement("h3");
+    var AlearnerNum = document.createElement("span");
+    var Ap = document.createElement("p");
+    var App = document.createElement("p");
+    var AcategoryName = _data.list[i].categoryName;
+//课程一般显示的内容
     _img.setAttribute("src", _data.list[i].middlePhotoUrl);
     _name.setAttribute("class", "course-name");
     _name.innerHTML = _data.list[i].name;
@@ -259,13 +351,30 @@ function setProgrammingCourses(data) {
     _learnerNum.innerHTML = _data.list[i].learnerCount;
     _price.setAttribute("class","course-price");
     _price.innerHTML = "<span>￥</span>" + _data.list[i].price;
-    
+    if(AcategoryName == null){AcategoryName = "无";}
+//课程悬浮显示的内容    
+    Aimg.setAttribute("src", _data.list[i].middlePhotoUrl);
+    Ah.setAttribute("class", "a-course-name");
+    Ah.innerHTML = _data.list[i].name;
+	AlearnerNum.setAttribute("class", "a-learnerNum");
+	AlearnerNum.innerHTML = _data.list[i].learnerCount + "人在学";
+	Ap.setAttribute("class", "a-categoryname clearfix");
+	Ap.innerHTML = "发布者：" + _data.list[i].provider + "</br>分类：" + AcategoryName;
+	App.setAttribute("class", "a-course-description");
+	App.innerHTML = _data.list[i].description;
+//课程悬浮显示的内容全部在一个a标签里
+	oA.appendChild(Aimg);
+	oA.appendChild(Ah);
+	oA.appendChild(AlearnerNum);
+	oA.appendChild(Ap);
+	oA.appendChild(App);
 
     oLi.appendChild(_img);
     oLi.appendChild(_name);
     oLi.appendChild(_provider);
     oLi.appendChild(_learnerNum);
     oLi.appendChild(_price);
+    oLi.appendChild(oA);
   }
 }
 
